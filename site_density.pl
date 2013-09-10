@@ -48,7 +48,7 @@ while (my $line = <MEL>) {
 		}
 	}
 	if ($token > 0) {
-		print MELDENS "$dens\n";
+		print MELDENS "$enh\t$dens\n";
 	}
 }
 close MEL;
@@ -75,7 +75,7 @@ while (my $line = <SIM>) {
 		}
 	}
 	if ($token > 0){
-		print SIMDENS "$dens\n";
+		print SIMDENS "$enh\t$dens\n";
 	}
 }
 close SIM;
@@ -102,7 +102,7 @@ while (my $line = <YAK>) {
 		}
 	}
 	if ($token > 0) {
-		print YAKDENS "$dens\n";
+		print YAKDENS "$enh\t$dens\n";
 	}
 }
 close YAK;
@@ -129,7 +129,7 @@ while (my $line = <PSE>) {
 		}
 	}
 	if ($token > 0) {
-		print PSEDENS "$dens\n";
+		print PSEDENS "$enh\t$dens\n";
 	}
 }
 close PSE;
