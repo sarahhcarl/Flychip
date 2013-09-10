@@ -11,12 +11,12 @@ my $soap = MyInterfaces::RSATWebServices::RSATWSPortType->new();
 $soap->get_transport()->timeout(1000);
 
 my $alignment;
-if ($ARGV[0] =~ /..\/prank\/(.+).fasta.best.anc.fas/) {
+if ($ARGV[0] =~ /..\/prank\/length_change_test\/(.+).fasta.best.anc.fas/) {
 	$alignment = $1;
 	print "$alignment\n";
 }
 
-my $result_dir = "vnd_scan_allspecies/";
+my $result_dir = "Kr_scan_90/";
 &File::Path::mkpath($result_dir);
 die("Cannot create result directory", $result_dir) unless (-d $result_dir);
 
@@ -29,19 +29,21 @@ while (my $line = <FILE>) {
 }
 die("Not enough sequences present in the alignment") unless ($count == 14);
 
-open ERROR, ">>vndscan_errors.txt";
+open ERROR, ">>Krscan90_errors.txt";
 
 #Parameters for analysis:
 my $output = 'both';
-my $matrix = ">TCAAKTCT	9-TCAAKTCT,BestGuess:vnd/dmmpmm(Papatsenko)/fly(0.701)	6.063837	-23.312737	0	T:933.0(22.91%),B:8617.7(18.88%),P:1e-10
-0.001	0.066	0.001	0.932
-0.001	0.613	0.385	0.001
-0.666	0.001	0.332	0.001
-0.723	0.039	0.237	0.001
-0.001	0.001	0.451	0.547
-0.097	0.001	0.001	0.901
-0.001	0.645	0.353	0.001
-0.159	0.001	0.001	0.839";
+my $matrix = ">YCCCCTTYCC	2-YCCCCTTYCC,BestGuess:Kr/dmmpmm(Noyes)/fly(0.672)	6.294879	-74.782742	0	T:1354.0(18.59%),B:5707.0(13.56%),P:1e-32
+0.149	0.392	0.198	0.260
+0.001	0.981	0.012	0.006
+0.049	0.844	0.052	0.055
+0.214	0.784	0.001	0.001
+0.264	0.453	0.117	0.166
+0.129	0.153	0.103	0.615
+0.001	0.091	0.002	0.906
+0.065	0.334	0.176	0.425
+0.001	0.712	0.033	0.254
+0.089	0.766	0.067	0.0789";
 my $matrix_format = "cb";
 my $n_treatment = "score";
 my $organism = "Drosophila_melanogaster";
@@ -74,7 +76,7 @@ my %args = ('output' => $output,
 			);
 
 #Define output parameters
-my $client_scan_file = $result_dir."/".$alignment."_vndscan.ft";
+my $client_scan_file = $result_dir."/".$alignment."_Krscan90.ft";
 my $server_scan_file;
 my $result;
 

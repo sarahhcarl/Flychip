@@ -1,3 +1,3 @@
-for i in ./vnd_scan_allspecies/*.ft; do
-	perl rsat_analysis_onlyextant.pl ${i}
+for i in ./vvl_scan_allspecies/*.ft; do
+	perl ../Flychip/matrix_scan/rsat_analysis_onlyextant.pl ${i}
 done

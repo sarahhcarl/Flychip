@@ -5,13 +5,13 @@ use warnings;
 
 
 open FILE, $ARGV[0];
-open COUNT, ">>vnd_scan_count.txt";
-open CONS, ">>vnd_scan_conservation.txt";
+open COUNT, ">>SoxN_scan90_count.txt";
+open CONS, ">>SoxN_scan90_conservation.txt";
 
 #Define which enhancer and which TF we're looking at
 my $enhancer;
 my $TF;
-if ($ARGV[0] =~ /\.\/vnd_scan_allspecies\/(.+)\_(.+)\.ft/) {
+if ($ARGV[0] =~ /\.\/SoxN_scan_90\/(.+)\_(.+)\.ft/) {
 	$enhancer = $1;
 	$TF = $2;
 }

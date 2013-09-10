@@ -4,14 +4,14 @@ use strict;
 use warnings;
 
 open COUNT, $ARGV[0];
-open MEL, "<./prank/all_CNS_enhancers_dmel_strand.bed";
-open SIM, "<./prank/all_CNS_enhancers_dsim_strand.bed";
-open YAK, "<./prank/all_CNS_enhancers_dyak_strand.bed";
-open PSE, "<./prank/all_CNS_enhancers_dpse_strand.bed";
-open MELDENS, ">./rsat/vnd_scan_density_dmel.txt";
-open SIMDENS, ">./rsat/vnd_scan_density_dsim.txt";
-open YAKDENS, ">./rsat/vnd_scan_density_dyak.txt";
-open PSEDENS, ">./rsat/vnd_scan_density_dpse.txt";
+open MEL, "<../prank/all_CNS_enhancers_dmel_strand.bed";
+open SIM, "<../prank/all_CNS_enhancers_dsim_strand.bed";
+open YAK, "<../prank/all_CNS_enhancers_dyak_strand.bed";
+open PSE, "<../prank/all_CNS_enhancers_dpse_strand.bed";
+open MELDENS, ">../rsat/SoxN_scan90_density_dmel.txt";
+open SIMDENS, ">../rsat/SoxN_scan90_density_dsim.txt";
+open YAKDENS, ">../rsat/SoxN_scan90_density_dyak.txt";
+open PSEDENS, ">../rsat/SoxN_scan90_density_dpse.txt";
 
 #Store counts of TFBSs per enhancer in a hash
 my %counts;
