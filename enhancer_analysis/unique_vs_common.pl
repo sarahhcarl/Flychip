@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 
+
 # First, open the lists of enhancers by binding category and store them in hashes
 
 open D_UNIQUE, "<..\/..\/CNS.all.full.in.DDam.unique.bed";
@@ -38,17 +39,19 @@ while (my $line = <COMMON>) {
 close COMMON;
 
 
-#Define species being analyzed
+#Define species and TFs being analyzed
 
 my @species = ('dmel', 'dsim', 'dyak', 'dpse');
+my @TFs = ('D', 'SoxN');
 
 
 # Now split the info in the density files by binding category and report it
 
 foreach (@species) {
-	open D_DENS, "..\/..\/rsat\/D_scan90_density_$_.txt";
-	open SOXN_DENS, "..\/..\/rsat\/SoxN_scan90_density_$_.txt";
-	
+	foreach (@TF) {
+		open DENS, "<..\/..\/rsat\/".$TF."_scan90_density_".$species.".txt";
+		&density($TF, $species);
+	}	
 }
 
 
@@ -57,6 +60,33 @@ foreach (@species) {
 # Definition of density subroutine
 
 sub density {
+	open DFILE, "..\/..\/rsat\/".$_[0]."_scan90_Dunique_density_".$_[1].".txt";
+	open SOXNFILE, "..\/..\/rsat\/".$_[0]."_scan90_SoxNunique_density_".$_[1].".txt";
+	open COMMONFILE, "..\/..\/rsat\/".$_[0]."_scan90_common_density_".$_[1].".txt";
+	while (my $line = <DENS>) {
+		chomp $line;
+		my @tmp = split(/\t/, $line);
+		my $enh = $tmp[0];
+		my $dens = $tmp[1];
+		foreach my $ID (keys %d_unique) {
+			if ($enh eq $ID) {
+				print DFILE "$enh\t$dens\n";
+			}
+		}
+		foreach my $ID (keys %soxn_unique) {
+			if ($enh eq $ID) {
+				print SOXNFILE "$enh\t$dens\n";
+			}
+		}
+		foreach my $ID (keys %common) {
+			if ($enh eq $ID) {
+				print COMMONFILE "$enh\t$dens\n";
+			}
+		}
+	}
+	close DFILE;
+	close SOXNFILE;
+	close COMMONFILE;
 	
 }
 
