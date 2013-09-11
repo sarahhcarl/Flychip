@@ -47,8 +47,8 @@ my @TFs = ('D', 'SoxN');
 
 # Now split the info in the density files by binding category and report it
 
-foreach (@species) {
-	foreach (@TF) {
+foreach my $species (@species) {
+	foreach my $TF (@TFs) {
 		open DENS, "<..\/..\/rsat\/".$TF."_scan90_density_".$species.".txt";
 		&density($TF, $species);
 	}	
@@ -60,9 +60,9 @@ foreach (@species) {
 # Definition of density subroutine
 
 sub density {
-	open DFILE, "..\/..\/rsat\/".$_[0]."_scan90_Dunique_density_".$_[1].".txt";
-	open SOXNFILE, "..\/..\/rsat\/".$_[0]."_scan90_SoxNunique_density_".$_[1].".txt";
-	open COMMONFILE, "..\/..\/rsat\/".$_[0]."_scan90_common_density_".$_[1].".txt";
+	open DFILE, ">..\/..\/rsat\/".$_[0]."_scan90_Dunique_density_".$_[1].".txt";
+	open SOXNFILE, ">..\/..\/rsat\/".$_[0]."_scan90_SoxNunique_density_".$_[1].".txt";
+	open COMMONFILE, ">..\/..\/rsat\/".$_[0]."_scan90_common_density_".$_[1].".txt";
 	while (my $line = <DENS>) {
 		chomp $line;
 		my @tmp = split(/\t/, $line);
