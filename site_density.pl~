@@ -4,14 +4,14 @@ use strict;
 use warnings;
 
 open COUNT, $ARGV[0];
-open MEL, "<../prank/all_CNS_enhancers_dmel_strand.bed";
-open SIM, "<../prank/all_CNS_enhancers_dsim_strand.bed";
-open YAK, "<../prank/all_CNS_enhancers_dyak_strand.bed";
-open PSE, "<../prank/all_CNS_enhancers_dpse_strand.bed";
-open MELDENS, ">../rsat/D_scan90_density_dmel.txt";
-open SIMDENS, ">../rsat/D_scan90_density_dsim.txt";
-open YAKDENS, ">../rsat/D_scan90_density_dyak.txt";
-open PSEDENS, ">../rsat/D_scan90_density_dpse.txt";
+open MEL, "<./prank/all_CNS_enhancers_dmel_strand.bed";
+open SIM, "<./prank/all_CNS_enhancers_dsim_strand.bed";
+open YAK, "<./prank/all_CNS_enhancers_dyak_strand.bed";
+open PSE, "<./prank/all_CNS_enhancers_dpse_strand.bed";
+open MELDENS, ">./rsat/vnd_scan_density_dmel.txt";
+open SIMDENS, ">./rsat/vnd_scan_density_dsim.txt";
+open YAKDENS, ">./rsat/vnd_scan_density_dyak.txt";
+open PSEDENS, ">./rsat/vnd_scan_density_dpse.txt";
 
 #Store counts of TFBSs per enhancer in a hash
 my %counts;
@@ -48,7 +48,7 @@ while (my $line = <MEL>) {
 		}
 	}
 	if ($token > 0) {
-		print MELDENS "$enh\t$dens\n";
+		print MELDENS "$dens\n";
 	}
 }
 close MEL;
@@ -75,7 +75,7 @@ while (my $line = <SIM>) {
 		}
 	}
 	if ($token > 0){
-		print SIMDENS "$enh\t$dens\n";
+		print SIMDENS "$dens\n";
 	}
 }
 close SIM;
@@ -102,7 +102,7 @@ while (my $line = <YAK>) {
 		}
 	}
 	if ($token > 0) {
-		print YAKDENS "$enh\t$dens\n";
+		print YAKDENS "$dens\n";
 	}
 }
 close YAK;
@@ -129,7 +129,7 @@ while (my $line = <PSE>) {
 		}
 	}
 	if ($token > 0) {
-		print PSEDENS "$enh\t$dens\n";
+		print PSEDENS "$dens\n";
 	}
 }
 close PSE;
