@@ -38,12 +38,12 @@ my $count = 0;
 while (defined (my $line = <HANDLE>)) {
     chomp $line;
     $count++;
-    my @tmp = split(/\t/, $line);
+    my @tmp = split(/\,/, $line);
     
-    my $chr = $tmp[0];
-    my $ntl = $tmp[1];
-    my $ntr = $tmp[2];
-    my $ID = $tmp[3];
+    my $chr = $tmp[1];
+    my $ntl = $tmp[2];
+    my $ntr = $tmp[3];
+    my $ID = $tmp[0];
     
      #...and extract the underlying genome sequence and print it in FASTA format
 	my $seq = substr($genome_sequence{$chr}, $ntl, $ntr-$ntl);
