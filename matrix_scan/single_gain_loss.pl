@@ -8,8 +8,8 @@ my %cons3;
 my %cons2;
 my %cons1;
 
-open OUTPUT, ">./conservation/vvl_gain_loss.txt";
-open FILE, "<vvl_scan_extant_conservation.txt";
+open OUTPUT, ">./conservation/SoxN_nonCNS_gain_loss.txt";
+open FILE, "<SoxN_scan_nonCNS_extant_conservation.txt";
 while (my $line = <FILE>) {
 	chomp $line;
 	my @tmp = split(/\t/, $line);

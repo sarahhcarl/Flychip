@@ -3,14 +3,14 @@
 use strict;
 use warnings;
 
-open DMEL, "<all_CNS_enhancers_dmel_strand.fa";
-open MELID, "<all_CNS_enhancers_dmel_strand.bed";
-open DSIM, "<all_CNS_enhancers_dsim_strand_9.fa";
-open SIMID, "<all_CNS_enhancers_dsim_strand_9.bed";
-open DYAK, "<all_CNS_enhancers_dyak_strand_9.fa";
-open YAKID, "<all_CNS_enhancers_dyak_strand_9.bed";
-open DPSE, "<all_CNS_enhancers_dpse_strand_7.fa";
-open PSEID, "<all_CNS_enhancers_dpse_strand_7.bed";
+open DMEL, "<nonCNS_enhancers_dmel.fa";
+open MELID, "<nonCNS_enhancers_dmel_strand.bed";
+open DSIM, "<nonCNS_enhancers_dsim.fa";
+open SIMID, "<nonCNS_enhancers_dsim_strand.bed";
+open DYAK, "<nonCNS_enhancers_dyak.fa";
+open YAKID, "<nonCNS_enhancers_dyak_strand.bed";
+open DPSE, "<nonCNS_enhancers_dpse.fa";
+open PSEID, "<nonCNS_enhancers_dpse_strand.bed";
 
 my %melid;
 my %simid;

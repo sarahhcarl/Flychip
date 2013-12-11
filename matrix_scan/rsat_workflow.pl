@@ -11,12 +11,12 @@ my $soap = MyInterfaces::RSATWebServices::RSATWSPortType->new();
 $soap->get_transport()->timeout(1000);
 
 my $alignment;
-if ($ARGV[0] =~ /..\/prank\/length_change_test\/(.+).fasta.best.anc.fas/) {
+if ($ARGV[0] =~ /..\/prank\/control_enhancers\/nonCNS\/(.+).fasta.best.anc.fas/) {
 	$alignment = $1;
 	print "$alignment\n";
 }
 
-my $result_dir = "Kr_scan_90/";
+my $result_dir = "SoxN_scan_nonCNS/";
 &File::Path::mkpath($result_dir);
 die("Cannot create result directory", $result_dir) unless (-d $result_dir);
 
@@ -29,21 +29,21 @@ while (my $line = <FILE>) {
 }
 die("Not enough sequences present in the alignment") unless ($count == 14);
 
-open ERROR, ">>Krscan90_errors.txt";
+open ERROR, ">>SoxNscan_nonCNS_errors.txt";
 
 #Parameters for analysis:
 my $output = 'both';
-my $matrix = ">YCCCCTTYCC	2-YCCCCTTYCC,BestGuess:Kr/dmmpmm(Noyes)/fly(0.672)	6.294879	-74.782742	0	T:1354.0(18.59%),B:5707.0(13.56%),P:1e-32
-0.149	0.392	0.198	0.260
-0.001	0.981	0.012	0.006
-0.049	0.844	0.052	0.055
-0.214	0.784	0.001	0.001
-0.264	0.453	0.117	0.166
-0.129	0.153	0.103	0.615
-0.001	0.091	0.002	0.906
-0.065	0.334	0.176	0.425
-0.001	0.712	0.033	0.254
-0.089	0.766	0.067	0.0789";
+my $matrix = ">VGVACAAAGG	3-VGVACAAAGG,BestGuess:MA00445.1_D/Jaspar(0.804)	7.156252	-66.311778	0	T:1417.0(19.45%),B:6147.8(14.61%),P:1e-28
+0.355	0.217	0.274	0.155
+0.208	0.213	0.521	0.058
+0.253	0.284	0.399	0.064
+0.805	0.087	0.107	0.001
+0.304	0.614	0.001	0.081
+0.997	0.001	0.001	0.001
+0.997	0.001	0.001	0.001
+0.838	0.001	0.001	0.160
+0.312	0.082	0.502	0.104
+0.001	0.001	0.965	0.033";
 my $matrix_format = "cb";
 my $n_treatment = "score";
 my $organism = "Drosophila_melanogaster";
@@ -76,7 +76,7 @@ my %args = ('output' => $output,
 			);
 
 #Define output parameters
-my $client_scan_file = $result_dir."/".$alignment."_Krscan90.ft";
+my $client_scan_file = $result_dir."/".$alignment."_SoxN_scan_nonCNS.ft";
 my $server_scan_file;
 my $result;
 
