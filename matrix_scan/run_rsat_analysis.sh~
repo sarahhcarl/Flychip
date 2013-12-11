@@ -1,0 +1,3 @@
+for i in ./D_scan_90/*.ft; do
+	perl ../Flychip/matrix_scan/rsat_analysis.pl ${i}
+done
