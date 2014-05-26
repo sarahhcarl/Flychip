@@ -1,0 +1,13 @@
+plot(Psq_Stage5_3, type="l", ylim=c(18,35), col="blue", lwd=3.0, ylab="Stage 5 FAIRE score", xlab="Distance to peak center")
+lines(Trl_5_3, type="l", lwd=3.0)
+lines(BCD_Stage_3, type="l", col="red", lwd=3.0)
+lines(HB_5_3, type="l", col="forestgreen", lwd=3.0)
+lines(KR_5_3, type="l", col="purple", lwd=3.0)
+lines(GT_5_3, type="l", col="orange", lwd=3.0)
+
+text(2000, 34, "Psq", col="blue", pos=4)
+text(2000, 33, "Bcd", col="red", pos=4)
+text(2000, 32, "Gt", col="orange", pos=4)
+text(2000, 31, "Kr", col="purple", pos=4)
+text(2000, 30, "Hb", col="forestgreen", pos=4)
+text(2000, 29, "Trl", pos=4)
