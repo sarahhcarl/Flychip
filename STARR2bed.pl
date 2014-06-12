@@ -12,23 +12,23 @@ if ($ARGV[0] =~ /(.+).txt/) {
 }
 
 open FILE, "<", $ARGV[0];
-open BED, ">", $sample.".byfold.bed";
+open BED, ">", $sample.".bed";
 
 while (my $line = <FILE>) {
 	chomp $line;
 	my @tmp = split(/\t/, $line);
 	my $chr = $tmp[0];
 	my $mid = $tmp[1];
-	my $score = $tmp[2];
-	my $pval = $tmp[3];
+	my $score = $tmp[7];
+	my $pval = $tmp[8];
 	my $start = $mid - 250;
 	if ($start < 0) {
 		$start = 0;
 	}
 	my $end = $mid + 250;
-	if ($score >= 3) {
-		print BED "$chr\t$start\t$end\n";
-	}
+	#if ($score >= 3) {
+		print BED "$chr\t$start\t$end\t$score\t$pval\n";
+	#}
 }
 
 close FILE;
