@@ -1,10 +1,10 @@
 use strict;
 use warnings;
 
-open FILE, "<dp3_GATC_sites.bed";
-open NEWFILE, ">dp3_GATC_fragments.bed";
+open FILE, "<dyak_GATC_sites_sorted.bed";
+open NEWFILE, ">dyak_GATC_fragments.bed";
 
-my $old_chr="chr2";
+my $old_chr="chr2h";
 my $old_end;
 my $old_ID;
 my $counter=0;
