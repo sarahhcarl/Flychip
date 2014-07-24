@@ -43,11 +43,11 @@ while (defined (my $line = <HANDLE>)) {
     my $chr = $tmp[0];
     my $ntl = $tmp[1];
     my $ntr = $tmp[2];
-    #my $ID = $tmp[3];
+    my $ID = $tmp[3];
     
      #...and extract the underlying genome sequence and print it in FASTA format
 	my $seq = substr($genome_sequence{$chr}, $ntl, $ntr-$ntl);
-	print ">$chr:$ntl-$ntr\n$seq\n";
+	print ">$ID\_$chr:$ntl-$ntr\n$seq\n";
 }
   
 close HANDLE;

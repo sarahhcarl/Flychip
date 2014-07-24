@@ -3,14 +3,14 @@
 use strict;
 use warnings;
 
-open DMEL, "<nonCNS_enhancers_dmel.fa";
-open MELID, "<nonCNS_enhancers_dmel_strand.bed";
-open DSIM, "<nonCNS_enhancers_dsim.fa";
-open SIMID, "<nonCNS_enhancers_dsim_strand.bed";
-open DYAK, "<nonCNS_enhancers_dyak.fa";
-open YAKID, "<nonCNS_enhancers_dyak_strand.bed";
-open DPSE, "<nonCNS_enhancers_dpse.fa";
-open PSEID, "<nonCNS_enhancers_dpse_strand.bed";
+open DMEL, "</flychip/production/projects/P99759/prank/Dmel_DDam_unique.fasta";
+open MELID, "</flychip/production/projects/P99759/prank/Dmel_DDam_unique_ID.bed";
+open DSIM, "</flychip/production/projects/P99759/prank/Dsim_DDam_mel_unique.fasta";
+open SIMID, "</flychip/production/projects/P99759/prank/Dsim_DDam_mel_unique.bed";
+open DYAK, "</flychip/production/projects/P99759/prank/Dyak_DDam_mel_unique.fasta";
+open YAKID, "</flychip/production/projects/P99759/prank/Dyak_DDam_mel_unique.bed";
+open DPSE, "</flychip/production/projects/P99759/prank/Dpse_DDam_mel_unique.fasta";
+open PSEID, "</flychip/production/projects/P99759/prank/Dpse_DDam_mel_unique.bed";
 
 my %melid;
 my %simid;
@@ -65,86 +65,114 @@ while (my $line = <PSEID>) {
 }
 close PSEID;
 
+my %mel;
+my %sim;
+my %yak;
+my %pse;
+
+my $ID;
 while (my $line = <DMEL>) {
 	chomp $line;
-	my $ID;
 	my $c;
-	if (($line =~ /\>dm3\_(.+)\_\+/) || ($line =~ /\>dm3\_(.+)\_\-/)) {
+	if ($line =~ /\>dm3\_(.+)\_\+/) {
 		$c = $1;
+		#print "$c\n";
 		foreach my $coords (keys %melid) {
+			#print "$coords\n";
 			if ($c eq $coords) {
 				$ID = $melid{$coords};
+				$mel{$ID} = $c;
+				#print "$ID\t$c\n";
 			}
 		}
-		open NEWFILE, ">>$ID.fasta";
-		print NEWFILE ">dmel ".$ID."\n";
 	}
 	else {
-		print NEWFILE "$line\n";
-		close NEWFILE;
+		$mel{$ID} = $mel{$ID}."\t".$line;
 	}
 }
 close DMEL;
 
 while (my $line = <DSIM>) {
 	chomp $line;
-	my $ID;
 	my $c;
 	if (($line =~ /\>droSim1\_(.+)\_\+/) || ($line =~ /\>droSim1\_(.+)\_\-/)) {
 		$c = $1;
 		foreach my $coords (keys %simid) {
 			if ($c eq $coords) {
 				$ID = $simid{$coords};
+				$sim{$ID} = $c;
 			}
 		}
-		open NEWFILE, ">>$ID.fasta";
-		print NEWFILE ">dsim ".$ID."\n";
 	}
 	else {
-		print NEWFILE "$line\n";
-		close NEWFILE;
+		$sim{$ID} = $sim{$ID}."\t".$line;
 	}
 }
 close DSIM;
 
 while (my $line = <DYAK>) {
 	chomp $line;
-	my $ID;
 	my $c;
 	if (($line =~ /\>droYak2\_(.+)\_\+/) || ($line =~ /\>droYak2\_(.+)\_\-/)) {
 		$c = $1;
 		foreach my $coords (keys %yakid) {
 			if ($c eq $coords) {
 				$ID = $yakid{$coords};
+				$yak{$ID}=$c;
 			}
 		}
-		open NEWFILE, ">>$ID.fasta";
-		print NEWFILE ">dyak ".$ID."\n";
 	}
 	else {
-		print NEWFILE "$line\n";
-		close NEWFILE;
+		$yak{$ID} = $yak{$ID}."\t".$line;
 	}
 }
 close DYAK;
 
 while (my $line = <DPSE>) {
 	chomp $line;
-	my $ID;
 	my $c;
 	if (($line =~ /\>dp3\_(.+)\_\+/) || ($line =~ /\>dp3\_(.+)\_\-/)) {
 		$c = $1;
+		#print "$c\n";
 		foreach my $coords (keys %pseid) {
 			if ($c eq $coords) {
 				$ID = $pseid{$coords};
+				$pse{$ID} = $c;
 			}
 		}
-		open NEWFILE, ">>$ID.fasta";
-		print NEWFILE ">dpse ".$ID."\n";
 	}
 	else {
-		print NEWFILE "$line\n";
-		close NEWFILE;
+		$pse{$ID} = $pse{$ID}."\t".$line;
 	}
 }
 close DPSE;
+
+foreach my $ID (keys %mel) {
+	my @tmp1 = split(/\t/, $mel{$ID});
+	my $melcoords = $tmp1[0];
+	my $melseq = $tmp1[1];
+	foreach my $simID (keys %sim) {
+		my @tmp2 = split(/\t/, $sim{$simID});
+		my $simcoords = $tmp2[0];
+		my $simseq = $tmp2[1];
+		if ($ID == $simID) {
+			foreach my $yakID (keys %yak) {
+				my @tmp3 = split(/\t/, $yak{$yakID});
+				my $yakcoords = $tmp3[0];
+				my $yakseq = $tmp3[1];
+				if ($ID == $yakID) {
+					foreach my $pseID (keys %pse) {
+						my @tmp4 = split(/\t/, $pse{$pseID});
+						my $psecoords = $tmp4[0];
+						my $pseseq = $tmp4[1];
+						if ($ID == $pseID) {
+							open NEWFILE, ">", "unique_mel/".$ID."_interval.fa";
+							print NEWFILE "\>dmel\ $ID\_$melcoords\n$melseq\n\>dsim\ $simID\_$simcoords\n$simseq\n\>dyak\ $yakID\_$yakcoords\n$yakseq\n\>dpse\ $pseID\_$psecoords\n$pseseq\n";
+							close NEWFILE;
+						}
+					}
+				}
+			}
+		}
+	}
+}

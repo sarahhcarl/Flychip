@@ -15,7 +15,7 @@ unless ($ARGV[0]) {
 my %genome_sequence = ();
 # load genomic sequences into memory -- warning: don't try this at home
 # on hal/thebeast/themonster:
-my $PATH2SEQ = "/home/sarah/homer/data/genomes/dm3/";
+my $PATH2SEQ = "/flychip/share/Sarah/Drosophila_genomes/dm3/";
 
 my @chrom = ("chr2L", "chr2LHet", "chr2R", "chr2RHet", "chr3L", "chr3LHet", "chr3R", "chr3RHet", "chr4", "chrM", "chrU", "chrUextra", "chrX", "chrXHet", "chrYHet");
 
@@ -38,12 +38,12 @@ my $count = 0;
 while (defined (my $line = <HANDLE>)) {
     chomp $line;
     $count++;
-    my @tmp = split(/\,/, $line);
+    my @tmp = split(/\t/, $line);
     
-    my $chr = $tmp[1];
-    my $ntl = $tmp[2];
-    my $ntr = $tmp[3];
-    my $ID = $tmp[0];
+    my $chr = $tmp[0];
+    my $ntl = $tmp[1];
+    my $ntr = $tmp[2];
+    my $ID = $tmp[3];
     
      #...and extract the underlying genome sequence and print it in FASTA format
 	my $seq = substr($genome_sequence{$chr}, $ntl, $ntr-$ntl);

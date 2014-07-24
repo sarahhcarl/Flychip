@@ -15,17 +15,20 @@ my $counter=0;
 while (my $line = <FILE>) {
 	chomp $line;
 	$counter++;
-	if ($counter > 3) {
+	if ($counter > 0) {
 		my @tmp = split(/\t/, $line);
-		my $chr = $tmp[0];
-		my $chrom = "chr".$chr;
-		my $start = $tmp[3];
-		my $end = $tmp[4];
-		my $ID = $tmp[8];
-		print BED "$chrom\t$start\t$end\t$ID\n";
+		my $chr;
+		my $start;
+		my $end;
+		if ($tmp[0] =~ /(.+):(.+)-(.+)/) {
+			$chr = $1;
+			$start = $2;
+			$end = $3;
+		}
+		my $num = $tmp[1];
+		my $dens = $tmp[2];
+		print BED "$chr\t$start\t$end\t$num\t$dens\n";
 	}
 }
 close BED;
 close FILE;
-
-
