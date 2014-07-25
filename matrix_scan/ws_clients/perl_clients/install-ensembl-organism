@@ -1,0 +1,82 @@
+#!/usr/bin/perl -w
+# install-ensembl-organism
+
+use strict;
+use SOAP::WSDL; ## Requires version 2.0 or later of SOAP::WSDL
+use lib 'RSATWS';
+use MyInterfaces::RSATWebServices::RSATWSPortType;
+
+## WSDL location
+my $server = 'http://rsat.scmbb.ulb.ac.be/rsat/web_services';
+
+## Service call
+my $soap=MyInterfaces::RSATWebServices::RSATWSPortType->new();
+
+## Output option
+my $output_choice = 'client';  ## Accepted values: 'server', 'client', 'both'
+
+## Retrieve-ensembl-seq parameters
+# my $organism = 'Saccharomyces_cerevisiae';  ## Name of the query organism
+my $organism = 'Homo_sapiens';  ## Name of the query organism
+# my @chromosomes = ("I", "II", "III",'IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI');  ## List of chromosomes
+#my @chromosomes = ("1", "2", "3",'4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','X','Y');  ## List of chromosomes
+my @chromosomes = ('17');
+my $all = 1;  ## the -all option (other accepted value = 1). This option is incompatible with the query list @gene (above)
+my $noorf = 0;  ## Clip sequences to avoid upstream ORFs
+my $from = -2000;  ## Start position of the sequence
+my $to = -1;  ## End position of the sequence
+my $feattype = 'mRNA';  ## The -feattype option value is  not specified, the default is used
+my $type = 'upstream';  ## The -type option value; other example:'-type downstream'
+#my $format = '';  ## The -format option value. We use the default (fasta), but other formats could be specified, for example 'multi'
+my $lw = 0;  ## Line width. 0 means all on one line
+#my $label = 'id,name';  ## Choice of label for the retrieved sequence(s)
+#my $label_sep = '';  ## Choice of separator for the label(s) of the retrieved sequence(s)
+#my $nocom = 0;  ## Other possible value = 1, to get sequence(s) whithout comments
+my $repeat =  0;  ## Other possible value = 1, to have annotated repeat regions masked
+#my $imp_pos = 0;  ## Admit imprecise position (value = 1 to do so)
+
+# open FASTA, ">TEST_all_yeast.fasta" or die "Can't open output file: $!\n";
+open FASTA, ">TEST_all_human.fasta" or die "Can't open output file: $!\n";
+
+foreach my $chrom (@chromosomes) {
+
+    print "INFO: retrieving sequences from chromosome $chrom\n";
+
+    my %args = (
+	    'output' => $output_choice,
+	    'organism' => $organism,
+	    'all' => $all,
+	    'chromosome' => $chrom,
+	    'noorf' => $noorf,
+	    'from' => $from,
+	    'to' => $to,
+	    'feattype' => $feattype,
+	    'type' => $type,
+#	    'format' => $format,
+#	    'lw' => $lw,
+#	    'label' => $label,
+#	    'label_sep' => $label_sep,
+#	    'nocom' => $nocom,
+	    'repeat' => $repeat,
+#	    'imp_pos' => $imp_pos
+	    );
+
+    ## Avoid timeout
+    $soap->get_transport()->timeout(6000);
+
+    ## Send the request to the server
+    print "Sending request to the server $server\n";
+    my $som = $soap->retrieve_ensembl_seq({'request' => \%args});
+
+    ## Get the result
+    unless ($som) {
+	printf "A fault (%s) occured: %s\n", $som->get_faultcode(), $som->get_faultstring();
+    } else {
+	my $results = $som->get_response();
+
+	## Report the result
+	my $result = $results -> get_client();
+	print FASTA $result;
+    }
+}
+close FASTA;

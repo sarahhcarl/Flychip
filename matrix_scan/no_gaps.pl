@@ -4,8 +4,12 @@ use strict;
 use warnings;
 
 my %seqs;
+my $name;
+if ($ARGV[0] =~ /(\d+)\_interval(.+)/) {
+	open FILE, "<", $ARGV[0];
+	$name = $1;
+}
 
-open FILE, "+<$ARGV[0]";
 my $ID;
 while (my $line = <FILE>) {
 	my $seq;
@@ -14,14 +18,18 @@ while (my $line = <FILE>) {
 		$ID = $line;
 	} else {
 		$seq = $line;
-		$seqs{$seq}=$ID;
+		$seqs{$ID}=$seq;
+		#print "$ID\t$line\n";
 	}
 }
 
-seek(FILE, 0, 0);
+#seek(FILE, 0, 0);
 
-foreach my $seq (sort {$b cmp $a} keys %seqs) {
-	print FILE "$seqs{$seq}\n";
-	print FILE "$seq\n";
+open NEWFILE, ">", $1."_interval_nogaps.fa";
+foreach my $ID (sort {$seqs{$b} cmp $seqs{$a}} (keys %seqs)) {
+	#print "$ID\n";
+	print NEWFILE "$ID\n";
+	print NEWFILE "$seqs{$ID}\n";
 }
 close FILE;
+close NEWFILE

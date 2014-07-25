@@ -1,0 +1,158 @@
+1665_interval
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+not well-formed (invalid token) at line 1, column 3, byte 3 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+Can't connect to rsat.ulb.ac.be:80 (Connection timed out)
+
+LWP::Protocol::http::Socket: connect: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 51, <FILE> line 14.
+
+1000_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213101_T4txXh' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213101_4aOeSH' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1009_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213102_DUs4Tq' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213102_X36efd' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+100_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213103_Zd7ie1' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213103_tjQKZF' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1016_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213105_R0Jpia' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213105_pHEB7Q' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1025_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213106_qVQacn' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213106_oIJOmT' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1027_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213107_3hAagP' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213107_o5agpf' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1029_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213108_3o0XSx' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213108_lH76FN' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+102_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213109_2QvAC3' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213109_2ry43k' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1031_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213111_OeSg8S' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213111_QSCqqc' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1032_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213112_5x7Idt' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213112_dfshWn' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1034_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213113_jUpm5n' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213113_qgWLJE' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1038_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213114_E3EGY0' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213114_jxxbTW' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+103_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213115_Y294FH' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213115_qb0KGe' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1040_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213117_sE9oBl' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213117_LK98Gv' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1041_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213118_Xh61tL' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213118_QDHNad' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1042_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213119_FzedF5' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213119_qzYkmK' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1046_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213120_KVzHWy' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213120_VgxuCy' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1047_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213122_8PUhlx' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213122_DiUS28' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1048_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213123_fVkPTQ' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213123_ZQXHrW' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1051_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213124_n6JLe7' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213124_X0HN97' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1054_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213125_zT9icV' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213125_JhkrOx' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1055_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213126_adSAaC' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213126_qPgmfB' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1056_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213128_XnPZZv' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213128_e5yoiP' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1058_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213129_8SajxU' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213129_IN7OxF' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1059_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213130_qr5Yvf' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213130_ztEqIH' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+105_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213131_YeT4Eg' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213131_P6rNAz' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1062_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213132_USR5q9' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213132_mAJLnG' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1065_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213134_TubYAz' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213134_s8YVJr' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1067_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213135_wxsgqJ' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213135_firjpp' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1071_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213136_6SkRQ1' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213136_CUWtkq' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1077_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213137_PxYfX2' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213137_1hKicG' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1087_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213139_qzEC8S' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213139_TGWN34' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1088_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213140_Hah7At' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213140_lEtR2S' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1090_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Error
+	OpenInputFile: File ./DamID_sox_motifs.txt does not exist.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.213141_aSe7Hq' -m './DamID_sox_motifs.txt' -matrix_format 'transfac' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.213141_JRoRtO' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1000_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Can't take log of 0 at /home/rsat/rsat/perl-scripts/matrix-scan line 3889, <$input_fh> line 3.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-sequence_2014-07-25.114906_jOm3td' -m '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-matrix_2014-07-25.114906_JbQx8l' -matrix_format 'cb' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan_bg_2014-07-25.114906_DuFwG4' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1009_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Can't take log of 0 at /home/rsat/rsat/perl-scripts/matrix-scan line 3889, <$input_fh> line 3.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-sequence_2014-07-25.114909_FSJFpK' -m '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-matrix_2014-07-25.114909_pRzB0W' -matrix_format 'cb' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan_bg_2014-07-25.114909_C7UmgK' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1016_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Can't take log of 0 at /home/rsat/rsat/perl-scripts/matrix-scan line 3889, <$input_fh> line 3.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-sequence_2014-07-25.114917_4OjdZ2' -m '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-matrix_2014-07-25.114917_Ud87wv' -matrix_format 'cb' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan_bg_2014-07-25.114917_eMX2k5' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+1029_interval
+A fault (soap:Server.ExecError) occurred: Execution error: Can't take log of 0 at /home/rsat/rsat/perl-scripts/matrix-scan line 3889, <$input_fh> line 3.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-sequence_2014-07-25.114949_8bxlnT' -m '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan-matrix_2014-07-25.114949_OrHp7S' -matrix_format 'cb' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/25/matrix-scan_bg_2014-07-25.114949_peWjRV' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)

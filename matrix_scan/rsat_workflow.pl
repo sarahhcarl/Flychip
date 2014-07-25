@@ -11,12 +11,12 @@ my $soap = MyInterfaces::RSATWebServices::RSATWSPortType->new();
 $soap->get_transport()->timeout(1000);
 
 my $alignment;
-if ($ARGV[0] =~ /..\/prank\/control_enhancers\/nonCNS\/(.+).fasta.best.anc.fas/) {
+if ($ARGV[0] =~ /\/flychip\/production\/projects\/P99759\/prank\/unique_mel\/(.+)_nogaps\.fa/) {
 	$alignment = $1;
 	print "$alignment\n";
 }
 
-my $result_dir = "SoxN_scan_nonCNS/";
+my $result_dir = "/flychip/production/projects/P99759/rsat_unique/";
 &File::Path::mkpath($result_dir);
 die("Cannot create result directory", $result_dir) unless (-d $result_dir);
 
@@ -29,21 +29,67 @@ while (my $line = <FILE>) {
 }
 die("Not enough sequences present in the alignment") unless ($count == 14);
 
-open ERROR, ">>SoxNscan_nonCNS_errors.txt";
+open ERROR, ">>Dmel_DDam_unique_scan_errors.txt";
 
 #Parameters for analysis:
 my $output = 'both';
-my $matrix = ">VGVACAAAGG	3-VGVACAAAGG,BestGuess:MA00445.1_D/Jaspar(0.804)	7.156252	-66.311778	0	T:1417.0(19.45%),B:6147.8(14.61%),P:1e-28
-0.355	0.217	0.274	0.155
-0.208	0.213	0.521	0.058
-0.253	0.284	0.399	0.064
-0.805	0.087	0.107	0.001
-0.304	0.614	0.001	0.081
-0.997	0.001	0.001	0.001
-0.997	0.001	0.001	0.001
-0.838	0.001	0.001	0.160
-0.312	0.082	0.502	0.104
-0.001	0.001	0.965	0.033";
+my $matrix_file = "
+>D_dmel /name=D_Dmel /info=2.944 /gc_content=0.304 /consensus=TACAATGGTT /size=10 
+0.001	0.001	0.001	0.997	
+0.997	0.001	0.001	0.001	
+0.001	0.997	0.001	0.001	
+0.768	0.001	0.001	0.230	
+0.997	0.001	0.001	0.001	
+0.001	0.001	0.001	0.997	
+0.001	0.001	0.997	0.001	
+0.001	0.001	0.997	0.001	
+0.001	0.001	0.001	0.997	
+0.001	0.038	0.001	0.960	
+>SoxN_dmel /name=SoxN_dmel /info=2.041 /gc_content=0.345 /consensus=CCWTTGTT /size=8 
+0.001	0.997	0.001	0.001	
+0.247	0.736	0.001	0.016	
+0.278	0.001	0.001	0.720	
+0.001	0.001	0.001	0.997	
+0.001	0.001	0.001	0.997	
+0.001	0.001	0.997	0.001	
+0.001	0.001	0.001	0.997	
+0.248	0.015	0.001	0.736
+>D_dsim /name=D_dsim /info=2.080 /gc_content=0.246 /consensus=TBATTGTT /size=8 
+0.001	0.024	0.001	0.974	
+0.001	0.309	0.412	0.278	
+0.997	0.001	0.001	0.001	
+0.001	0.217	0.001	0.781	
+0.001	0.001	0.001	0.997	
+0.001	0.001	0.997	0.001	
+0.001	0.001	0.001	0.997	
+0.001	0.001	0.001	0.997	
+>SoxN_dsim /name=SoxN_dsim /info=1.893 /gc_content=0.237 /consensus=CTTTGTTT /size=8 
+0.034	0.592	0.149	0.225	
+0.171	0.001	0.023	0.805	
+0.001	0.066	0.001	0.932	
+0.001	0.001	0.001	0.997	
+0.041	0.072	0.886	0.001	
+0.021	0.001	0.001	0.977	
+0.001	0.034	0.048	0.917	
+0.028	0.001	0.021	0.950
+>D_dyak /name=D_dyak /info=1.855 /gc_content=0.403 /consensus=TACAATGG /size=8 
+0.001	0.058	0.119	0.822	
+0.804	0.063	0.050	0.083	
+0.001	0.910	0.001	0.088	
+0.960	0.019	0.020	0.001	
+0.921	0.001	0.047	0.031	
+0.109	0.024	0.001	0.866	
+0.001	0.111	0.845	0.043	
+0.015	0.001	0.956	0.028
+>D_dpse /name=D_dpse /info=1.850 /gc_content=0.295 /consensus=ACAATAGA /size=8 
+0.902	0.039	0.027	0.032	
+0.001	0.961	0.037	0.001	
+0.944	0.054	0.001	0.001	
+0.971	0.001	0.027	0.001	
+0.102	0.001	0.034	0.863	
+0.847	0.001	0.093	0.059	
+0.055	0.025	0.858	0.062	
+0.728	0.143	0.056	0.073";
 my $matrix_format = "cb";
 my $n_treatment = "score";
 my $organism = "Drosophila_melanogaster";
@@ -53,7 +99,7 @@ c	0.20053
 g	0.19830
 t	0.29744";
 my @lth = ('score 4');
-my @uth = ('pval 1e-3');
+my @uth = ('pval 1e-4');
 my $origin = "start";
 my $crer_ids=1;
 
@@ -61,7 +107,7 @@ my $crer_ids=1;
 #Define hashtable of parameters
 my %args = ('output' => $output, 
 			'sequence' => $sequence, 
-			'matrix' => $matrix, 
+			'matrix' => $matrix_file, 
 			'matrix_format' => $matrix_format, 
 			'background_model' => $background_model,
 			'background' => $background,
@@ -76,7 +122,7 @@ my %args = ('output' => $output,
 			);
 
 #Define output parameters
-my $client_scan_file = $result_dir."/".$alignment."_SoxN_scan_nonCNS.ft";
+my $client_scan_file = $result_dir."/".$alignment."_DDam_unique_scan.ft";
 my $server_scan_file;
 my $result;
 

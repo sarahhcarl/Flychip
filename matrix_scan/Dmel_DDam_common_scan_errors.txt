@@ -1,0 +1,33 @@
+
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+not well-formed (invalid token) at line 1, column 3, byte 3 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+Can't connect to rsat.ulb.ac.be:80 (Connection timed out)
+
+LWP::Protocol::http::Socket: connect: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 51, <FILE> line 14.
+
+
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+not well-formed (invalid token) at line 1, column 3, byte 3 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+Can't connect to rsat.ulb.ac.be:80 (Connection timed out)
+
+LWP::Protocol::http::Socket: connect: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 51, <FILE> line 14.
+
+
+A fault (soap:Server.ExecError) occurred: Execution error: Can't take log of 0 at /home/rsat/rsat/perl-scripts/matrix-scan line 3889, <$input_fh> line 11.
+command: &RSAT::util::hide_RSAT_path(/home/rsat/rsat/perl-scripts/matrix-scan -i '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-sequence_2014-07-24.232053_BeHlVK' -m '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan-matrix_2014-07-24.232053_ldwTLr' -matrix_format 'cb' -n score -bgfile '/home/rsat/rsat/public_html/tmp/wwwrun/2014/07/24/matrix-scan_bg_2014-07-24.232053_e0kZKy' -lth 'score' '4' -uth 'pval' '1e-4' -2str -v '1' -crer_ids)
+
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+not well-formed (invalid token) at line 1, column 3, byte 3 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+Can't connect to rsat.ulb.ac.be:80 (Connection timed out)
+
+LWP::Protocol::http::Socket: connect: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 51, <FILE> line 14.
+

@@ -167,7 +167,7 @@ foreach my $ID (keys %mel) {
 						my $pseseq = $tmp4[1];
 						if ($ID == $pseID) {
 							open NEWFILE, ">", "unique_mel/".$ID."_interval.fa";
-							print NEWFILE "\>dmel\ $ID\_$melcoords\n$melseq\n\>dsim\ $simID\_$simcoords\n$simseq\n\>dyak\ $yakID\_$yakcoords\n$yakseq\n\>dpse\ $pseID\_$psecoords\n$pseseq\n";
+							print NEWFILE "\>dmel\_$ID\_$melcoords\n$melseq\n\>dsim\_$simID\_$simcoords\n$simseq\n\>dyak\_$yakID\_$yakcoords\n$yakseq\n\>dpse\_$pseID\_$psecoords\n$pseseq\n";
 							close NEWFILE;
 						}
 					}
