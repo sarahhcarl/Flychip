@@ -11,12 +11,12 @@ my $soap = MyInterfaces::RSATWebServices::RSATWSPortType->new();
 $soap->get_transport()->timeout(1000);
 
 my $alignment;
-if ($ARGV[0] =~ /\/flychip\/production\/projects\/P99759\/prank\/unique_mel\/(.+)_nogaps\.fa/) {
+if ($ARGV[0] =~ /\/flychip\/production\/projects\/P99759\/prank\/fasta\/(.+)_nogaps\.fa/) {
 	$alignment = $1;
 	print "$alignment\n";
 }
 
-my $result_dir = "/flychip/production/projects/P99759/rsat_unique/";
+my $result_dir = "/flychip/production/projects/P99759/rsat_001/";
 &File::Path::mkpath($result_dir);
 die("Cannot create result directory", $result_dir) unless (-d $result_dir);
 
@@ -29,7 +29,7 @@ while (my $line = <FILE>) {
 }
 die("Not enough sequences present in the alignment") unless ($count == 14);
 
-open ERROR, ">>Dmel_DDam_unique_scan_errors.txt";
+open ERROR, ">>Dmel_DDam_cons_scan_errors.txt";
 
 #Parameters for analysis:
 my $output = 'both';
@@ -99,7 +99,7 @@ c	0.20053
 g	0.19830
 t	0.29744";
 my @lth = ('score 4');
-my @uth = ('pval 1e-4');
+my @uth = ('pval 1e-3');
 my $origin = "start";
 my $crer_ids=1;
 
@@ -122,7 +122,7 @@ my %args = ('output' => $output,
 			);
 
 #Define output parameters
-my $client_scan_file = $result_dir."/".$alignment."_DDam_unique_scan.ft";
+my $client_scan_file = $result_dir."/".$alignment."_DDam_cons_scan.ft";
 my $server_scan_file;
 my $result;
 

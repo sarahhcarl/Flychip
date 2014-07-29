@@ -1,17 +1,23 @@
-## Script to calculate the percentage of perfectly conserved nucleotides in a multiple alignment
+## Script to calculate the percentage of perfectly conserved nucleotides in a multiple alignment of a motif
 
 use strict;
 use warnings;
 
 my $interval;
+my $motif_start;
 my $mel = "";
+my $mel_score;
 my $sim = "";
+my $sim_score;
 my $yak = "";
+my $yak_score;
 my $pse = "";
+my $pse_score;
 
-if ($ARGV[0] =~ /(\d+)\_(.+)/) {
+if ($ARGV[0] =~ /(\d+)_interval(\d+)_(\d+).fa/) {
 	open FILE, "<", $ARGV[0];
 	$interval = $1;
+	$motif_start = $2;
 }
 
 #while (<FILE>) {}
@@ -21,14 +27,18 @@ if ($ARGV[0] =~ /(\d+)\_(.+)/) {
 my $species="none";
 while (my $line = <FILE>) {
 	chomp $line;
-	if ($line =~ /\>dmel/) {
+	if ($line =~ /^\>dmel\t(.+)/) {
 		$species = "mel";
-	} elsif ($line =~ /\>dsim/) {
+		$mel_score = $1;
+	} elsif ($line =~ /^\>dsim\t(.+)/) {
 		$species = "sim";
-	} elsif ($line =~ /\>dyak/) {
+		$sim_score = $1;
+	} elsif ($line =~ /^\>dyak\t(.+)/) {
 		$species = "yak";
-	} elsif ($line =~ /\>dpse/) {
+		$yak_score = $1;
+	} elsif ($line =~ /^\>dpse\t(.+)/) {
 		$species = "pse";
+		$pse_score = $1;
 		#print "$line\n";
 	} elsif ($line =~ /\>#3#/) {
 		$species = "none";
@@ -50,16 +60,16 @@ while (my $line = <FILE>) {
 close FILE;
 
 if ($mel eq "") {
-	print "Problem - no Dmel sequence in ".$interval."!";
+	print "Problem - no Dmel sequence in ".$ARGV[0]."!";
 }
 if ($sim eq "") {
-	print "Problem - no Dsim sequence in ".$interval."!";
+	print "Problem - no Dsim sequence in ".$ARGV[0]."!";
 }	
 if ($yak eq "") {
-	print "Problem - no Dyak sequence in ".$interval."!";
+	print "Problem - no Dyak sequence in ".$ARGV[0]."!";
 }
 if ($pse eq "") {
-	print "Problem - no Dpse sequence in ".$interval."!";
+	print "Problem - no Dpse sequence in ".$ARGV[0]."!";
 }
 
 my $mel_nt;
@@ -82,10 +92,9 @@ foreach my $i (0..$len-1) {
 
 #print "Second: $pse\n";
 
-open NEWFILE, ">>", "Dmel_DDam_unique_nts_length.txt";
+open NEWFILE, ">>", "Dmel_DDam_cons_nts_motifs.txt";
 my $percent = $cons/$len;
-print NEWFILE "$interval\t$len\t$percent\n";
+print NEWFILE "$interval\t$motif_start\t$percent\n";
 close NEWFILE;
 
 #print "$len\t$cons\t$percent\n";
-

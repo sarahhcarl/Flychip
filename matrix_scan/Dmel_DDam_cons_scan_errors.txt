@@ -1,0 +1,26 @@
+1234_interval
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+syntax error at line 1, column 0, byte 0 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+read failed: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 325, <FILE> line 14.
+
+345_interval
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+not well-formed (invalid token) at line 1, column 3, byte 3 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+Can't connect to rsat.ulb.ac.be:80 (Connection timed out)
+
+LWP::Protocol::http::Socket: connect: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 51, <FILE> line 14.
+
+813_interval
+A fault (SOAP-ENV:Server) occurred: Error deserializing message: 
+syntax error at line 1, column 0, byte 0 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 79.
+ at line 1 at /usr/local/share/perl/5.14.2/SOAP/WSDL/Expat/Base.pm line 82.
+. 
+Message was: 
+read failed: Connection timed out at /usr/local/share/perl/5.14.2/LWP/Protocol/http.pm line 325, <FILE> line 14.
+
