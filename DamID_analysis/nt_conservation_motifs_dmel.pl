@@ -9,7 +9,7 @@ if ($ARGV[0] =~ /(\d+)_interval(.+).ft/) {
 	open FT, "<", $ARGV[0];
 }
 
-open FAS, "<", "\.\.\/prank\/fasta\/".$interval."_interval_nogaps\.fa";
+open FAS, "<", "\.\.\/prank\/unique_mel\/".$interval."_interval_nogaps\.fa";
 
 my $mel = "";
 my $sim = "";

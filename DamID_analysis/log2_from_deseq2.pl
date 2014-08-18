@@ -21,9 +21,9 @@ while (my $line = <GATC>) {
 	chomp $line;
 	my @tmp = split(/\t/, $line);
 	my $chr = $tmp[0];
-	my $start = $tmp[3];
-	my $end = $tmp[4];
-	my $id = $tmp[8];
+	my $start = $tmp[1];
+	my $end = $tmp[2];
+	my $id = $tmp[3];
 	$gatc{$id}=$chr."\t".$start."\t".$end;
 }
 close GATC;
